@@ -30,16 +30,15 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 # ---------------------------------------------------------------------------
 print("Loading PyTorch GCN Model...")
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-model = SignLanguageGCNModel(num_classes=24).to(device)
+model = SignLanguageGCNModel(num_classes=26).to(device)
 
 MODEL_PATH = os.path.join(SCRIPT_DIR, "sign_language_gcn_model.pth")
 model.load_state_dict(torch.load(MODEL_PATH, map_location=device, weights_only=True))
 model.eval()
 
-# الحروف اللي الموديل متدرب عليها (مفيش J ومفيش Z)
-LABELS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 
-          'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 
-          'T', 'U', 'V', 'W', 'X', 'Y']
+# قائمة الحروف الـ 26 كاملة بالترتيب الأبجدي الصحيح
+LABELS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 
+          'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 
 # ---------------------------------------------------------------------------
 # 3. فئات معالجة وتنعيم البيانات (Landmark Filter & Typing Engine)
