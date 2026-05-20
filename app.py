@@ -7,12 +7,12 @@ import torch
 import enchant
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
-from train_model import SignLanguageAttentionModel
+from train_gcn_model import SignLanguageGCNModel
 
 # ---------------------------------------------------------------------------
 # 1. إعداد السيرفر والمكتبات
 # ---------------------------------------------------------------------------
-app = FastAPI(title="ASL Recognition API (PyTorch Transformer)")
+app = FastAPI(title="ASL Recognition API (PyTorch GCN)")
 
 app.add_middleware(
     CORSMiddleware,
@@ -26,13 +26,13 @@ dictionary = enchant.Dict("en_US")
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # ---------------------------------------------------------------------------
-# 2. تحميل الموديل (PyTorch Transformer)
+# 2. تحميل الموديل (PyTorch GCN)
 # ---------------------------------------------------------------------------
-print("Loading PyTorch Model...")
+print("Loading PyTorch GCN Model...")
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-model = SignLanguageAttentionModel(num_classes=24).to(device)
+model = SignLanguageGCNModel(num_classes=24).to(device)
 
-MODEL_PATH = os.path.join(SCRIPT_DIR, "sign_language_model.pth")
+MODEL_PATH = os.path.join(SCRIPT_DIR, "sign_language_gcn_model.pth")
 model.load_state_dict(torch.load(MODEL_PATH, map_location=device, weights_only=True))
 model.eval()
 
