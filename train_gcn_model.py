@@ -5,8 +5,6 @@ import torch.optim as optim
 from torch.utils.data import Dataset, DataLoader, random_split
 from torch.optim.lr_scheduler import ReduceLROnPlateau
 import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
 from typing import Tuple, List, Dict, Optional, Any
 
 
@@ -197,6 +195,7 @@ class SignLanguageGCNModel(nn.Module):
 def train_gcn_model(npz_file: str, epochs: int = 100, batch_size: int = 64, 
                     learning_rate: float = 0.001) -> None:
     """Trains the hand landmark GCN recognition model."""
+    import matplotlib.pyplot as plt
     # Set random seed for reproducibility
     torch.manual_seed(42)
     
