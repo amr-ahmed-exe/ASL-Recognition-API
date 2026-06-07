@@ -1,6 +1,6 @@
-# 🤟 ASL Recognition API
-
 <div align="center">
+
+#  ASL Recognition API
 
 ![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688?style=for-the-badge&logo=fastapi&logoColor=white)
@@ -18,22 +18,22 @@
 
 ---
 
-## 📖 Overview
+##  Overview
 
 **Sign AI** is a cloud-based ASL recognition system that translates hand gestures into text in real-time. The Flutter mobile client captures hand landmarks using MediaPipe and streams them to this FastAPI backend via WebSocket. The server runs inference through a PyTorch **Graph Convolutional Network (GCN)**, returning letter predictions with confidence scores, spell-check suggestions, and auto-spacing.
 
-### ✨ Key Highlights
+###  Key Highlights
 
-- 🎯 **84.2% perceptual sign recognition accuracy** across all 26 ASL letters
-- ⚡ **Real-time inference** via WebSocket — sub-100ms response per frame
-- 🔥 **Zero error rate** under 100 concurrent WebSocket connections
-- 🧠 **Graph Convolutional Network** trained on 21 MediaPipe hand landmarks
-- ✋ **Dynamic gesture support** for motion-based letters J and Z
-- 📝 **Smart typing engine** with debouncing, auto-space, and spell-check
+-  **84.2% perceptual sign recognition accuracy** across all 26 ASL letters
+-  **Real-time inference** via WebSocket — sub-100ms response per frame
+-  **Zero error rate** under 100 concurrent WebSocket connections
+-  **Graph Convolutional Network** trained on 21 MediaPipe hand landmarks
+-  **Dynamic gesture support** for motion-based letters J and Z
+-  **Smart typing engine** with debouncing, auto-space, and spell-check
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 ```
 Flutter Mobile App (MediaPipe)
@@ -68,7 +68,7 @@ Flutter Mobile App (MediaPipe)
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -109,7 +109,7 @@ The API will be available at `http://localhost:8000`
 
 ---
 
-## 📡 API Reference
+##  API Reference
 
 ### WebSocket Endpoint
 
@@ -163,7 +163,7 @@ Establishes a real-time WebSocket connection for continuous ASL recognition.
 
 ---
 
-## 🧠 Model Details
+##  Model Details
 
 ### Graph Convolutional Network (GCN)
 
@@ -197,7 +197,7 @@ Raw MediaPipe output contains frame-to-frame jitter. The `LandmarkFilter` class 
 
 ---
 
-## 🧪 Testing & Performance
+##  Testing & Performance
 
 | Test Type | Result |
 |---|---|
@@ -208,7 +208,7 @@ Raw MediaPipe output contains frame-to-frame jitter. The `LandmarkFilter` class 
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 | Layer | Technology |
 |---|---|
@@ -224,7 +224,7 @@ Raw MediaPipe output contains frame-to-frame jitter. The `LandmarkFilter` class 
 
 ---
 
-## 📦 Dependencies
+##  Dependencies
 
 ```txt
 fastapi==0.115.0
@@ -238,7 +238,7 @@ websockets>=11.0.3
 
 ---
 
-## 👥 Team
+##  Team
 
 | Name | Role |
 |---|---|
@@ -246,9 +246,9 @@ websockets>=11.0.3
 
 ---
 
-## 📄 License
+##  License
 
-This project is part of a graduation thesis at **Suez Canal University — Egyptian Chinese College for Applied Technology (2026)**.
+Copyright © 2026 **Amr Ahmed**. All Rights Reserved.
 
 ---
 
@@ -256,6 +256,6 @@ This project is part of a graduation thesis at **Suez Canal University — Egypt
 
 Made with ❤️ as a graduation project · Suez Canal University 2026
 
-⭐ If you find this useful, please consider giving it a star!
+If you find this useful, please consider giving it a star!
 
 </div>
